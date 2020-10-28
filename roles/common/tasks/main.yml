@@ -1,3 +1,8 @@
+- name: Check if provisioning directory has already been clone
+  stat:
+    path: "{{ CLONE_DEST }}"
+  register: prov_dir
+
 - name: Check if ssh key is already present
   stat:
     path: "{{ KEY_PATH }}"
@@ -81,3 +86,10 @@
   always:
   - name: Kill the ssh-agent
     shell: export pid=`ps -A | grep ssh-agent | awk 'NR==1{print $1}' | cut -d' ' -f1`; kill $pid
+
+  when: not prov_dir.stat.exists
+
+- name: Pull latest changes
+  shell: "{{ GIT_EXECUTABLE }} pull"
+  args:
+    chdir: "{{ CLONE_DEST }}"
