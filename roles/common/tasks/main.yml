@@ -45,7 +45,7 @@
 
 - name: Add SSH public key to GitHub account
   uri:
-    url: https://api.github.ibm.com/user/keys
+    url: https://api.github.com/user/keys
     validate_certs: no
     method: POST
     body:
