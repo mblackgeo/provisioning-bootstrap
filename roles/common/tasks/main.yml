@@ -88,8 +88,3 @@
     shell: export pid=`ps -A | grep ssh-agent | awk 'NR==1{print $1}' | cut -d' ' -f1`; kill $pid
 
   when: not prov_dir.stat.exists
-
-- name: Pull latest changes
-  shell: "{{ GIT_EXECUTABLE }} pull"
-  args:
-    chdir: "{{ CLONE_DEST }}"
