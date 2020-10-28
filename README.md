@@ -1,5 +1,5 @@
 # Bootstrap repository
 
 * Clone
-* Run `boostrap.sh` to install ansible/git/make
+* Run `bootstrap.sh` to install make and ansible
 * Run `make install` which clones the private repository and runs the full setup
