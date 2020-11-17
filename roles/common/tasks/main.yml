@@ -29,7 +29,7 @@
   when: not known_hosts_stat.stat.exists
 
 - name: Get the content of known hosts
-  shell: "cat {{ KNOWN_HOSTS_PATH }} | grep github.ibm.com"
+  shell: "cat {{ KNOWN_HOSTS_PATH }} | grep github.com"
   register: host_stat
   failed_when: host_stat.rc > 1
 
@@ -37,7 +37,7 @@
 - name: Modify known hosts
   block:
   - name: Fetch GitHub public key
-    command: ssh-keyscan -T 10 github.ibm.com
+    command: ssh-keyscan -T 10 github.com
     register: keyscan
 
   - name: Add GitHub public key to ssh known_hosts
