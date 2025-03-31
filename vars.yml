@@ -8,7 +8,7 @@ GITHUB_ACCESS_TOKEN: !vault |
           6633376235613732333039393437376637346236663962323634
 KEY_TITLE: Github Provisioning Access
 KEY_PATH: ~/.ssh/id_rsa.git
-GIT_REPO: git@github.com:mblackpp/provisioning.git
+GIT_REPO: git@github.com:mblackgeo/provisioning.git
 GIT_BRANCH: master
 CLONE_DEST: ~/r/provisioning
 KNOWN_HOSTS_PATH: ~/.ssh/known_hosts
